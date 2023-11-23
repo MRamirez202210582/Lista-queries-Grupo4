@@ -1,0 +1,53 @@
+Relational Database Queries
+Niurka Huarcaya
+Listado del nombre de los alumnos y la cantidad de cursos en los que están matriculados
+SELECT a.nombreAlumno, count(*) as numero_cursos
+FROM alumno a
+JOIN alumnoXcursos m
+ON a.idAlumno = m.idAlumno
+GROUP BY a.nombreAlumno
+
+Definición de una función que lista los nombres de los alumnos, el número de asesorías recibidas por local y el nombre del local
+CREATE FUNCTION dbo.listarAlumnosConNumeroAsesorias_PorLocal()
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT a.nombreAlumno, l.nombreLocal, COUNT(n.idAsesoria) AS numeroAsesorias
+    FROM alumno a
+    JOIN AlumnoXAsesoria n
+    ON a.idAlumno = n.idAlumno
+    JOIN institutoxAsesoria s
+    ON n.idAsesoria = s.idAsesoria
+    JOIN Instituto i
+    ON s.idInstituto = i.idInstituto
+    JOIN Localidad l
+    ON  i.idLocal = l.idLocal
+    GROUP BY  a.nombreAlumno, l.nombreLocal)
+GO
+select * from dbo.listarAlumnosConNumeroAsesorias_PorLocal()
+
+Crear un un procedimiento almacenado que agregue un registro a la tabla de AlumnoXCursos y compruebe si el alumno está matriculado en ese curso antes de registrarlo
+CREATE PROCEDURE usp_InscribirAlumnoEnCurso
+    @idAlumno INT,
+    @idCurso INT,
+    @nombreCurso nvarchar(50)
+AS
+BEGIN
+    -- Verifica si el alumno ya está inscrito en el curso
+    IF NOT EXISTS (
+        SELECT idAlumno,idCurso
+        FROM AlumnoXCursos
+        WHERE idAlumno = @idAlumno AND idCurso = @idCurso
+    )
+    BEGIN
+        INSERT INTO AlumnoXCursos(idAlumno, idCurso, nombreCurso)
+        VALUES (@idAlumno, @idCurso, @nombreCurso);
+        PRINT 'Alumno inscrito en el curso exitosamente.';
+    END
+    ELSE
+    BEGIN
+        PRINT 'El alumno ya está inscrito en este curso.';
+    END
+END;
+EXEC usp_inscribirAlumnoEnCurso 8,5,'Bases de Datos'

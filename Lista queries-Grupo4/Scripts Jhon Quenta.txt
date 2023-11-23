@@ -1,0 +1,22 @@
+Relational Database Queries
+Jhon Quenta
+Listar todos los profesores de un localidad en específico
+SELECT Profesores.*
+FROM Profesores
+JOIN Direccion ON Profesores.idDireccion = Direccion.idDireccion
+WHERE Direccion.localidad = 'Lima';
+
+Listar el nombre de los estudiantes que llevan el mismo curso
+SELECT Estudiantes.nombre
+FROM Estudiantes
+JOIN CursosEstudiantes ON Estudiantes.idEstudiante = CursosEstudiantes.idEstudiante
+JOIN Cursos ON CursosEstudiantes.idCurso = Cursos.idCurso
+WHERE Cursos.idCurso = 1;
+
+Non-Relational Database Queries
+Jhon Quenta
+Listar los documentos del codigo instituto > 6
+db.Alumno.find({"instituto": {$gt: 6}})
+
+Listar los documentos del codigo alumno donde su tipo de institución es Escuela
+db.Alumno.find({"tipoDeInstitución": "Escuela"})
