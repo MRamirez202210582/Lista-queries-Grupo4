@@ -1,0 +1,106 @@
+.navbar {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2125);
+    top:0;
+    left:0;
+    background-color: white;
+}
+
+.navbar__content {
+    padding: 1rem 2rem;
+    justify-content: space-between;
+}
+
+.navbar__content-logo {
+    gap: 1rem;
+    font-size: 1.3rem;
+}
+
+.navbar__list-sections {
+    gap: 1rem;
+}
+
+.navbar__list-sections li{
+    font-family: var(--font-nav);
+    color: var(--color-text-blue);
+    font-size: 1.1rem;
+    position: relative; 
+    padding-right: 1rem;
+    font-weight: normal;
+}
+
+.navbar__list-sections li::before {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    right: 0;
+    transform: translateY(-50%); 
+    width: 1px;
+    height: 1.25rem;
+    background-color: var(--color-text-blue);
+}
+
+.navbar__list-sections li:hover {
+    font-weight: bold;
+}
+
+.navbar__content-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #000;
+}
+
+@media screen and (max-width: 840px) {
+    .navbar__content-list {
+        position: fixed;
+        top: -200%;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        width: 85%;
+        height: 100vh;
+        background-color: #fff;
+        opacity: .6;
+        color: #000;
+        transition: 2.5s;
+    }
+
+    .navbar__content-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        width: 68%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.2125);
+        transition: 1s;
+        z-index: 2;
+        height: 100vh;
+      }
+
+      .navbar__content-active li {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .navbar__content-active li::before {
+        width: 0;
+      }
+    
+      .navbar__content-toggle {
+        display: inherit;
+        z-index: 2;
+      }
+    
+      .navbar__content-active ul {
+        gap: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        flex-direction: column;
+        height: 100vh;
+      }
+}
