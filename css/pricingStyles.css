@@ -1,0 +1,106 @@
+.novision {
+    opacity: 0;
+  }
+  
+  main {
+    width: 100%;
+    position: relative;
+    padding-block: 20px;
+    height: 350px;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 329px;
+  }
+  
+  main img {
+    width: 50px;
+    z-index: 9;
+  }
+  
+  .pr-cards {
+    display: block;
+    position: relative;
+    width: 570px;
+    height: 350px;
+  }
+  
+  .pr-cards .pr-card:first-child {
+    transform: translateX(40px);
+  }
+  
+  .pr-cards .pr-card:last-child {
+    transform: translateX(-300px);
+  }
+  
+  .pr-card {
+    position: absolute;
+    left: 50%;
+    top: 13px;
+    transform-origin: center;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 410px;
+    padding: 3px 10px;
+    background-color: #223039;
+    border-radius: 15px;
+    z-index: 99;
+  
+    opacity: 0.2;
+  }
+  
+  .pr-selected {
+    z-index: 999;
+    animation: pr-selected 0.2s forwards;
+  }
+  
+  @keyframes pr-selected {
+    100% {
+      top: 5px;
+      padding: 12px 22px;
+      opacity: 1;
+    }
+  }
+  
+  .pr-card * {
+    color: #ffffff;
+    font-family: "Andada Pro";
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  
+  .pr-card h2 {
+    text-align: center;
+    margin-block: 25px; 
+  }
+  
+  .pr-card h3 {
+    margin: 0;
+    font-size: 1.9rem;
+    padding-bottom: 10px;
+  }
+  
+  .pr-card button {
+    font-size: 1.3rem;
+    background-color: rgba(108, 178, 206, 0.25);
+    padding: 20px 50px;
+    border-style: none;
+    border-radius: 25px;
+  }
+  
+  .pr-traits {
+    border-top: 1px solid black;
+  
+  }
+  
+  .pr-traits ul {
+    padding-left: 1rem;
+  }
+  
+  .pr-traits li {
+    font-size: 1.2rem;
+  }
+  
