@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Andada Pro', sans-serif;
+}
+
+.phrasePrincipal {
+    position: absolute;
+    top: 383px;
+    left: 160px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    position: absolute;
+    top: 474px;
+    left: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-1 button {
+    background-color: #6cb2ce;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.button-2 button {
+    background-color: #223039;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.button-1 button {
+    margin-left: 10px;
+}
+
+.imagePrincipal {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-80%);
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    z-index: -1;
+}
+
+
+.services {
+    position: absolute;
+    top: 12px;
+    left: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container img {
+    max-width: 90px;
+    max-height: 99px;
+}
+
+.container:nth-child(2) img {
+    max-width: 84px;
+    max-height: 98px;
+}
+
+.container:nth-child(3) img {
+    max-width: 83px;
+    max-height: 88px;
+}
+
+.container:last-child img {
+    max-width: 128px;
+    max-height: 125px;
+}
+
+.container p {
+    position: absolute;
+    text-align: center;
+}
+
+.container:nth-child(1) p {
+    top: 245px;
+    left: 240px;
+}
+
+.container:nth-child(2) p {
+    top: 354px;
+    left: 240px;
+}
+
+.container:nth-child(3) p {
+    top: 460px;
+    left: 240px;
+}
+
+.container:last-child p {
+    top: 610px;
+    left: 240px;
+}
+
+.container img {
+    position: absolute;
+}
+
+.container:nth-child(1) img {
+    top: 235px;
+    left: 140px;
+}
+
+.container:nth-child(2) img {
+    top: 334px;
+    left: 140px;
+}
+
+.container:nth-child(3) img {
+    top: 447px;
+    left: 140px;
+}
+
+.container:last-child img {
+    top: 561px;
+    left: 120px;
+}
+
+header {
+    background-color: #223039;
+    padding: 10px 0;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.nav-links {
+    margin-right: 900px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Andada Pro', sans-serif;
+}
+
+.auth-buttons {
+    margin-left: 100px;
+}
+
+.auth-buttons a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Andada Pro', sans-serif;
+}
+
+.auth-buttons a.register-btn {
+    background-color: #6cb2ce;
+    color: #ffffff;
+    padding: 10px 30px;
+}
+
+footer {
+    background-color: #223039;
+    padding: 20px 0;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    margin-left: 50px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.footer-column:last-child {
+    margin-right: 0;
+}
+
+.register-btn a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #6cb2ce;
+    font-size: 20px;
+}
+
+.register-item, .contact-item, .legal-item {
+    font-size: 24px;
+}
+
+.contact-info, .legal-info {
+    font-size: 20px;
+    font-family: 'Andada Pro', sans-serif;
+    font-weight: normal;
+}
